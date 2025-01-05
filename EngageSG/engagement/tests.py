@@ -8,7 +8,7 @@ from rest_framework.test import APITestCase
 class SurveyResponseTests(APITestCase):
     def setUp(self):
         SurveyResponse.objects.all().delete()
-        self.Sample_SampleType_response = SurveyResponse.objects.create(
+        self.sample_response_female = SurveyResponse.objects.create(
             UID_UniqueRespondentID="123456",
             Sample_SampleType="Resident (Citizen/PR)",
             Gender_Gender="Female",
@@ -129,43 +129,166 @@ class SurveyResponseTests(APITestCase):
             MHI_MonthlyHouseholdIncome="S4,001-S5,000",
             MPI_MonthlyPersonalIncome="S2,001-S3,000",
             Weight_Weight=70.5
-    )
-    
+        )
+        
+        self.sample_response_male = SurveyResponse.objects.create(
+            UID_UniqueRespondentID="123457",
+            Sample_SampleType="Resident (Citizen/PR)",
+            Gender_Gender="Male",
+            Age2_AgeGroups="35-44 years old",
+            Dwelling_DwellingType="Private Apartment",
+            Industry_CurrentIndustry="Information Technology",
+            SocialInvolve_SportsGroupParticipation="Yes",
+            SocialInvolve_ArtsCulturalGroupParticipation="No",
+            SocialInvolve_CommunityGroupParticipation="Yes",
+            SocialInvolve_WelfareSelfHelpGroupParticipation="Yes",
+            SocialInvolve_ReligiousGroupParticipation="No",
+            SocialInvolve_InterestHobbyGroupParticipation="No",
+            SocialInvolve_DiscussionGroupParticipation="Yes",
+            SocialInvolve_OtherParticipation="No",
+            SocialInvolve_NoneParticipation="No",
+            VolunteerDonate_VolunteeredTime="No",
+            VolunteerDonate_DonatedMoney="Yes",
+            VolunteerDonate_DonatedGoodsServices="No",
+            VolunteerDonate_VolunteeredForCommunityProjects="No",
+            VolunteerDonate_DonatedBlood="Yes",
+            VolunteerDonate_ResolvedCommunityIssues="Yes",
+            VolunteerDonate_HelpedNeighbors="Yes",
+            VolunteerDonate_OtherActivities="No",
+            VolunteerDonate_NoneActivities="No",
+            VolunteerDonateFreq_FrequencyOfVolunteering="Weekly",
+            VolunteerDonateMetd_MethodOfVolunteering="In-person",
+            SnetworkEthnicity_FriendsOfDifferentEthnicity="No",
+            SnetworkNationality_FriendsOfDifferentNationality="No",
+            SnetworkReligion_FriendsOfDifferentReligion="Yes",
+            SnetworkIncome_FriendsOfDifferentIncome="No",
+            SnetworkEducation_FriendsOfDifferentEducation="Yes",
+            SnetworkSorientation_FriendsOfDifferentOrientation="No",
+            CloseSGFriends_HaveCloseSGanFriends="Yes",
+            SinteractMeal_SharedAMealWithFriend="No",
+            SinteractInvitedFriend_InvitedFriendToCelebration="Yes",
+            SinteractBeenInvited_BeenInvitedToCelebration="Yes",
+            SinteractParticipated_ParticipatedInFestival="No",
+            SupportImmedfam_SupportFromImmediateFamily="Yes",
+            SupportExtfam_SupportFromExtendedFamily="No",
+            SupportWorksch_SupportFromWorkplaceSchool="Yes",
+            SupportFriends_SupportFromFriends="No",
+            OsExp_StudiedOverseas="No",
+            OsExp_WorkedOverseas="Yes",
+            OsExp_ExtendedStayOverseas="No",
+            OsExp_None="None",
+            TimeOs_TimeSpentLivingOverseas="2 years",
+            StudyOs_PlansToStudyOverseas="No",
+            WorkOs_PlansToWorkOverseas="No",
+            TravelOs_PlansToTravelOverseas="No",
+            MigrateOs_PlansToMigrateOverseas="Yes",
+            RetireOs_PlansToRetireOverseas="No",
+            OutcomeConnection_StrengthOfConnectionToSG="Weak",
+            OutcomeFuture_StrengthOfDesireToShapeSGFuture="Strong",
+            Pillarbeh1_ConsiderateBehaviorInPublic="Yes",
+            Pillarbeh2_HelpingCloseFriendsFamily="No",
+            Pillarbeh3_HelpingWiderNetwork="Yes",
+            Pillarbeh4_RegularlyDonating="No",
+            Pillarbeh5_RegularlyVolunteering="No",
+            Pillarbeh6_OfferingHelpUnasked="Yes",
+            Pillarbeh7_ConstructiveFeedbackOnPolicies="Yes",
+            Pillarbeh8_LeadMobilityForCauses="No",
+            Pillarbeh9_ParticipatingInCommunityInitiatives="Yes",
+            Pillarbeh10_GettingAlongWithDiverseCultures="No",
+            Pillarbeh11_AvoidingRaciallySensitiveConversations="No",
+            Pillarbeh12_EasingRaciallySensitiveSituations="No",
+            Pillarbeh13_IncludingDifferentCulturesInLife="Yes",
+            Pillarbeh14_UnderstandingCulturalPractices="No",
+            Pillarbeh15_HavingGoodFriendsFromDifferentCultures="Yes",
+            Pillarvals1_ConsistentWithValuesOfSociety="No",
+            Pillarvals2_GuidedByDesireToDoRight="Agree",
+            Pillarvals3_ActionsConsistentWithOthers="Disagree",
+            Pillarvals4_BeneficialActionsEvenIfCostly="Disagree",
+            Pillarvals5_ResponsibilityToContributeToSociety="Agree",
+            Pillarvals6_HelpingOthersIncreasesWellBeing="No",
+            Pillarvals7_HelpingRiskingOffense="No",
+            Pillarvals8_KnowingHowToHelpPeopleInNeed="Yes",
+            Pillarvals9_HavingASayInDecisions="Yes",
+            Pillarvals12_ActiveRoleInSociety="No",
+            Pillarvals13_PotentialForPositiveChange="Yes",
+            Pillarvals14_BelongingAndAcceptanceInSG="No",
+            Pillarvals21_CommonGroundWithDifferentCultures="Strongly agree",
+            Pillarvals22_InteractingWithDifferentCulturesBenefitsMe="Disagree",
+            Pillarvals23_MeaningfulInteractionsWithCultures="Disagree",
+            Pillarvals24_MeaningfulInteractionsWithNationalities="Agree",
+            Pillarvals25_RespectingCulturalDifferences="Agree",
+            Pillarvals26_NoRaciallyInsensitiveRemarks="Yes",
+            Pillarvals29_ConfidenceInSingaporeFuture="No",
+            Pillarvals30_SupportInGoodAndBadTimes="Agreed",
+            Pillarvals31_OpportunitiesForPersonalAspirations="Strongly agree",
+            Pillarvals32_OpportunitiesToLiveByValues="No",
+            Pillarvals33_CommittedToLongTermInSingapore="Yes",
+            OnlineNews_CheckNewsStayUpdated="Yes",
+            OnlineSM_CheckSocialMedia="No",
+            OnlineShop_ShoppingOnline="Yes",
+            OnlineAreasInterest_InformationOnAreasOfInterest="No",
+            OnlineGames_PlayingOnlineGames="Yes",
+            OnlineUpdate_UpdateSelfInformation="No",
+            OnlineSharemedia_ShareVideosPhotos="Yes",
+            OnlineWatchmedia_WatchVideosMovies="No",
+            MaritalStats_CurrentMaritalStatus="Single",
+            Children_HaveChildren="No",
+            AgeYoungestChild_AgeOfYoungestChild="N/A",
+            HHGrandparents_LiveWithGrandparents="No",
+            HHParents_LiveWithParents="Yes",
+            HHSiblings_LiveWithSiblings="No",
+            HHSpouse_LiveWithSpouse="No",
+            HHChildren_LiveWithChildren="No",
+            HHRelatives_LiveWithOtherRelatives="Yes",
+            HHHelper_LiveWithDomesticHelper="No",
+            HHMates_LiveWithFriendsHousemates="No",
+            HHMates_LiveWithEmployerFamily="No",
+            HHMates_LiveWithGrandChildren="No",
+            HHMates_LiveWithOther="No",
+            HHMates_NoneOfTheAboveStayAlone="Yes",
+            HighestEd_HighestEducationLevel="Master's",
+            InstitutionDeg_ConferringInstitutionForDegree="Another University",
+            Occupation_CurrentOccupation="Manager",
+            MHI_MonthlyHouseholdIncome="S6,001-S7,000",
+            MPI_MonthlyPersonalIncome="S3,001-S4,000",
+            Weight_Weight=75.0
+        )
+        
     def test_create_survey_response(self):
         print("\nTesting functionality: Create Survey Response at endpoint: /api/surveyresponses/")
 
         url = reverse('surveyresponse-list')
         data = {
-            "UID_UniqueRespondentID": "123457",
+            "UID_UniqueRespondentID": "123458",
             "Sample_SampleType": "Resident (Citizen/PR)",
-            "Gender_Gender": "Male",
-            "Age2_AgeGroups": "35-44 years old",
-            "Dwelling_DwellingType": "Private Apartment",
-            "Industry_CurrentIndustry": "Information Technology",
+            "Gender_Gender": "Other",
+            "Age2_AgeGroups": "45-54 years old",
+            "Dwelling_DwellingType": "Condominium",
+            "Industry_CurrentIndustry": "Healthcare",
             "SocialInvolve_SportsGroupParticipation": "Yes",
-            "SocialInvolve_ArtsCulturalGroupParticipation": "No",
-            "SocialInvolve_CommunityGroupParticipation": "No",
+            "SocialInvolve_ArtsCulturalGroupParticipation": "Yes",
+            "SocialInvolve_CommunityGroupParticipation": "Yes",
             "SocialInvolve_WelfareSelfHelpGroupParticipation": "Yes",
             "SocialInvolve_ReligiousGroupParticipation": "Yes",
-            "SocialInvolve_InterestHobbyGroupParticipation": "No",
+            "SocialInvolve_InterestHobbyGroupParticipation": "Yes",
             "SocialInvolve_DiscussionGroupParticipation": "Yes",
-            "SocialInvolve_OtherParticipation": "No",
+            "SocialInvolve_OtherParticipation": "Yes",
             "SocialInvolve_NoneParticipation": "No",
             "VolunteerDonate_VolunteeredTime": "Yes",
-            "VolunteerDonate_DonatedMoney": "No",
-            "VolunteerDonate_DonatedGoodsServices": "No",
-            "VolunteerDonate_VolunteeredForCommunityProjects": "Yes",
+            "VolunteerDonate_DonatedMoney": "Yes",
+            "VolunteerDonate_DonatedGoodsServices": "Yes",
+            "VolunteerDonate_VolunteeredForCommunityProjects": "No",
             "VolunteerDonate_DonatedBlood": "No",
-            "VolunteerDonate_ResolvedCommunityIssues": "No",
-            "VolunteerDonate_HelpedNeighbors": "Yes",
-            "VolunteerDonate_OtherActivities": "No",
+            "VolunteerDonate_ResolvedCommunityIssues": "Yes",
+            "VolunteerDonate_HelpedNeighbors": "No",
+            "VolunteerDonate_OtherActivities": "Yes",
             "VolunteerDonate_NoneActivities": "No",
             "VolunteerDonateFreq_FrequencyOfVolunteering": "Monthly",
             "VolunteerDonateMetd_MethodOfVolunteering": "In-person",
             "SnetworkEthnicity_FriendsOfDifferentEthnicity": "Yes",
             "SnetworkNationality_FriendsOfDifferentNationality": "No",
-            "SnetworkReligion_FriendsOfDifferentReligion": "No",
-            "SnetworkIncome_FriendsOfDifferentIncome": "Yes",
+            "SnetworkReligion_FriendsOfDifferentReligion": "Yes",
+            "SnetworkIncome_FriendsOfDifferentIncome": "No",
             "SnetworkEducation_FriendsOfDifferentEducation": "Yes",
             "SnetworkSorientation_FriendsOfDifferentOrientation": "No",
             "CloseSGFriends_HaveCloseSGanFriends": "Yes",
@@ -175,13 +298,13 @@ class SurveyResponseTests(APITestCase):
             "SinteractParticipated_ParticipatedInFestival": "No",
             "SupportImmedfam_SupportFromImmediateFamily": "Yes",
             "SupportExtfam_SupportFromExtendedFamily": "No",
-            "SupportWorksch_SupportFromWorkplaceSchool": "Yes",
+            "SupportWorksch_SupportFromWorkplaceSchool": "No",
             "SupportFriends_SupportFromFriends": "No",
-            "OsExp_StudiedOverseas": "Yes",
-            "OsExp_WorkedOverseas": "Yes",
+            "OsExp_StudiedOverseas": "No",
+            "OsExp_WorkedOverseas": "No",
             "OsExp_ExtendedStayOverseas": "No",
             "OsExp_None": "None",
-            "TimeOs_TimeSpentLivingOverseas": "2 years",
+            "TimeOs_TimeSpentLivingOverseas": "N/A",
             "StudyOs_PlansToStudyOverseas": "No",
             "WorkOs_PlansToWorkOverseas": "Yes",
             "TravelOs_PlansToTravelOverseas": "Yes",
@@ -195,37 +318,37 @@ class SurveyResponseTests(APITestCase):
             "Pillarbeh4_RegularlyDonating": "No",
             "Pillarbeh5_RegularlyVolunteering": "Yes",
             "Pillarbeh6_OfferingHelpUnasked": "Yes",
-            "Pillarbeh7_ConstructiveFeedbackOnPolicies": "No",
-            "Pillarbeh8_LeadMobilityForCauses": "Yes",
+            "Pillarbeh7_ConstructiveFeedbackOnPolicies": "Yes",
+            "Pillarbeh8_LeadMobilityForCauses": "No",
             "Pillarbeh9_ParticipatingInCommunityInitiatives": "No",
             "Pillarbeh10_GettingAlongWithDiverseCultures": "Yes",
             "Pillarbeh11_AvoidingRaciallySensitiveConversations": "No",
             "Pillarbeh12_EasingRaciallySensitiveSituations": "Yes",
-            "Pillarbeh13_IncludingDifferentCulturesInLife": "No",
-            "Pillarbeh14_UnderstandingCulturalPractices": "Yes",
-            "Pillarbeh15_HavingGoodFriendsFromDifferentCultures": "No",
+            "Pillarbeh13_IncludingDifferentCulturesInLife": "Yes",
+            "Pillarbeh14_UnderstandingCulturalPractices": "No",
+            "Pillarbeh15_HavingGoodFriendsFromDifferentCultures": "Yes",
             "Pillarvals1_ConsistentWithValuesOfSociety": "Yes",
-            "Pillarvals2_GuidedByDesireToDoRight": "Agree",
-            "Pillarvals3_ActionsConsistentWithOthers": "Disagree",
-            "Pillarvals4_BeneficialActionsEvenIfCostly": "Yes",
-            "Pillarvals5_ResponsibilityToContributeToSociety": "No",
+            "Pillarvals2_GuidedByDesireToDoRight": "Strongly agree",
+            "Pillarvals3_ActionsConsistentWithOthers": "Agree",
+            "Pillarvals4_BeneficialActionsEvenIfCostly": "Disagree",
+            "Pillarvals5_ResponsibilityToContributeToSociety": "Agree",
             "Pillarvals6_HelpingOthersIncreasesWellBeing": "Yes",
             "Pillarvals7_HelpingRiskingOffense": "No",
             "Pillarvals8_KnowingHowToHelpPeopleInNeed": "Yes",
             "Pillarvals9_HavingASayInDecisions": "Yes",
-            "Pillarvals12_ActiveRoleInSociety": "No",
-            "Pillarvals13_PotentialForPositiveChange": "Yes",
-            "Pillarvals14_BelongingAndAcceptanceInSG": "No",
+            "Pillarvals12_ActiveRoleInSociety": "Yes",
+            "Pillarvals13_PotentialForPositiveChange": "No",
+            "Pillarvals14_BelongingAndAcceptanceInSG": "Yes",
             "Pillarvals21_CommonGroundWithDifferentCultures": "Agree",
-            "Pillarvals22_InteractingWithDifferentCulturesBenefitsMe": "Disagree",
-            "Pillarvals23_MeaningfulInteractionsWithCultures": "Yes",
-            "Pillarvals24_MeaningfulInteractionsWithNationalities": "No",
-            "Pillarvals25_RespectingCulturalDifferences": "Yes",
+            "Pillarvals22_InteractingWithDifferentCulturesBenefitsMe": "Strongly agree",
+            "Pillarvals23_MeaningfulInteractionsWithCultures": "Disagree",
+            "Pillarvals24_MeaningfulInteractionsWithNationalities": "Agree",
+            "Pillarvals25_RespectingCulturalDifferences": "Agree",
             "Pillarvals26_NoRaciallyInsensitiveRemarks": "No",
             "Pillarvals29_ConfidenceInSingaporeFuture": "Yes",
-            "Pillarvals30_SupportInGoodAndBadTimes": "Agree",
-            "Pillarvals31_OpportunitiesForPersonalAspirations": "Strongly agree",
-            "Pillarvals32_OpportunitiesToLiveByValues": "No",
+            "Pillarvals30_SupportInGoodAndBadTimes": "Strongly agree",
+            "Pillarvals31_OpportunitiesForPersonalAspirations": "Agree",
+            "Pillarvals32_OpportunitiesToLiveByValues": "Disagree",
             "Pillarvals33_CommittedToLongTermInSingapore": "Yes",
             "OnlineNews_CheckNewsStayUpdated": "Yes",
             "OnlineSM_CheckSocialMedia": "No",
@@ -235,13 +358,13 @@ class SurveyResponseTests(APITestCase):
             "OnlineUpdate_UpdateSelfInformation": "No",
             "OnlineSharemedia_ShareVideosPhotos": "Yes",
             "OnlineWatchmedia_WatchVideosMovies": "No",
-            "MaritalStats_CurrentMaritalStatus": "Single",
-            "Children_HaveChildren": "No",
-            "AgeYoungestChild_AgeOfYoungestChild": "N/A",
+            "MaritalStats_CurrentMaritalStatus": "Married",
+            "Children_HaveChildren": "Yes",
+            "AgeYoungestChild_AgeOfYoungestChild": "6",
             "HHGrandparents_LiveWithGrandparents": "No",
             "HHParents_LiveWithParents": "Yes",
             "HHSiblings_LiveWithSiblings": "No",
-            "HHSpouse_LiveWithSpouse": "No",
+            "HHSpouse_LiveWithSpouse": "Yes",
             "HHChildren_LiveWithChildren": "No",
             "HHRelatives_LiveWithOtherRelatives": "Yes",
             "HHHelper_LiveWithDomesticHelper": "No",
@@ -249,20 +372,16 @@ class SurveyResponseTests(APITestCase):
             "HHMates_LiveWithEmployerFamily": "No",
             "HHMates_LiveWithGrandChildren": "No",
             "HHMates_LiveWithOther": "No",
-            "HHMates_NoneOfTheAboveStayAlone": "Yes",
-            "HighestEd_HighestEducationLevel": "Master's",
-            "InstitutionDeg_ConferringInstitutionForDegree": "Another University",
-            "Occupation_CurrentOccupation": "Manager",
-            "MHI_MonthlyHouseholdIncome": "S6,001-S7,000",
-            "MPI_MonthlyPersonalIncome": "S3,001-S4,000",
-            "Weight_Weight": 75.0
+            "HHMates_NoneOfTheAboveStayAlone": "No",
+            "HighestEd_HighestEducationLevel": "Doctorate",
+            "InstitutionDeg_ConferringInstitutionForDegree": "New University",
+            "Occupation_CurrentOccupation": "Scientist",
+            "MHI_MonthlyHouseholdIncome": "S7,001-S8,000",
+            "MPI_MonthlyPersonalIncome": "S4,001-S5,000",
+            "Weight_Weight": 80.0
         }
         response = self.client.post(url, data, format='json')
 
-        # Print the response content for debugging
-        #print("Response status:", response.status_code)
-        #print("Response data:", response.data)
-        
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         print("Success: Created a new survey response.")
         
@@ -280,6 +399,39 @@ class SurveyResponseTests(APITestCase):
         self.assertEqual(len(response.data['results']), expected_count)
         print("Success: Fetched survey responses.")
 
+    # New tests for filtering functionality
+    def test_filter_survey_responses_by_gender(self):
+        url = reverse('surveyresponse-list')
+        response = self.client.get(url, {'gender': 'Female'})
+        
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertTrue(all(entry['Gender_Gender'] == 'Female' for entry in response.data['results']))
+        print("Success: Filtered survey responses by gender.")
+
+    def test_filter_survey_responses_by_dwelling(self):
+        url = reverse('surveyresponse-list')
+        response = self.client.get(url, {'dwelling': 'HDB 3 room'})
+        
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertTrue(all(entry['Dwelling_DwellingType'] == 'HDB 3 room' for entry in response.data['results']))
+        print("Success: Filtered survey responses by dwelling.")
+
+    def test_filter_survey_responses_by_age_group(self):
+        url = reverse('surveyresponse-list')
+        response = self.client.get(url, {'age_group': '25-34 years old'})
+        
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertTrue(all(entry['Age2_AgeGroups'] == '25-34 years old' for entry in response.data['results']))
+        print("Success: Filtered survey responses by age group.")
+
+    def test_filter_survey_responses_by_industry(self):
+        url = reverse('surveyresponse-list')
+        response = self.client.get(url, {'industry': 'Wholesale and Retail Trade'})
+        
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertTrue(all(entry['Industry_CurrentIndustry'] == 'Wholesale and Retail Trade' for entry in response.data['results']))
+        print("Success: Filtered survey responses by industry.")
+
 class LoadDataTests(TestCase):
     def setUp(self):
         SurveyResponse.objects.all().delete()
@@ -294,7 +446,7 @@ class LoadDataTests(TestCase):
         print(f"Expected entry count: {expected_entry_count}, Actual entry count: {actual_count}")
         self.assertEqual(actual_count, expected_entry_count, "The number of loaded entries does not match the expected count.\n")
         print("Success: Survey response data loaded from CSV successfully.")
-    
+
 class SocialInvolvementStatisticsTests(TestCase):
     def setUp(self):
         SurveyResponse.objects.all().delete()
@@ -312,7 +464,7 @@ class SocialInvolvementStatisticsTests(TestCase):
             print(f"Checked for age group: {age_group} - Found: {age_group in response.data}")
         
         print("Success: All expected age groups were found in the response data.")
-        
+
 class VolunteerDonationHabitsTests(TestCase):
     def setUp(self):
         SurveyResponse.objects.all().delete()
@@ -330,7 +482,7 @@ class VolunteerDonationHabitsTests(TestCase):
         self.assertTrue(contains_female, "'Female' not found in the response data")
         
         print("Success: Validated volunteer habits response.")
-        
+
 class SocialInvolvementByEducationTests(TestCase):
     def setUp(self):
         SurveyResponse.objects.all().delete()

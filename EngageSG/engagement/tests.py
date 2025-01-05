@@ -54,3 +54,19 @@ class VolunteerDonationHabitsTests(TestCase):
         self.assertTrue(contains_female, "'Female' not found in the response data")
         
         print("Success: Validated volunteer habits response.")
+        
+class SocialInvolvementByEducationTests(TestCase):
+    def setUp(self):
+        SurveyResponse.objects.all().delete()
+        load_data_from_csv()
+
+    def test_social_involvement_by_education(self):
+        print("\nTesting functionality: Social Involvement by Education at endpoint: /api/social-involvement/education/")
+        url = reverse('social-involvement-by-education')
+        response = self.client.get(url)
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertTrue(isinstance(response.data, dict), "Response data should be a dictionary.")
+        self.assertGreater(len(response.data), 0, "The response data should contain statistics for at least one education level.")
+
+        print("Success: Validated social involvement statistics by education response.")

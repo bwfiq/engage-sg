@@ -58,3 +58,25 @@ def volunteer_habits(request):
         })
 
     return Response(stats)
+
+@api_view(['GET'])
+def social_involvement_by_education(request):
+    responses = SurveyResponse.objects.values('HighestEd_HighestEducationLevel').annotate(
+        sports_group=Count('SocialInvolve_SportsGroupParticipation', filter=Q(SocialInvolve_SportsGroupParticipation='Yes')),
+        arts_group=Count('SocialInvolve_ArtsCulturalGroupParticipation', filter=Q(SocialInvolve_ArtsCulturalGroupParticipation='Yes')),
+        community_group=Count('SocialInvolve_CommunityGroupParticipation', filter=Q(SocialInvolve_CommunityGroupParticipation='Yes')),
+        welfare_group=Count('SocialInvolve_WelfareSelfHelpGroupParticipation', filter=Q(SocialInvolve_WelfareSelfHelpGroupParticipation='Yes')),
+        religious_group=Count('SocialInvolve_ReligiousGroupParticipation', filter=Q(SocialInvolve_ReligiousGroupParticipation='Yes'))
+    )
+    
+    total_responses = SurveyResponse.objects.count()
+    
+    statistics = {response['HighestEd_HighestEducationLevel']: {
+        'sports_group': f"{(response['sports_group'] / total_responses) * 100:.2f}%",
+        'arts_group': f"{(response['arts_group'] / total_responses) * 100:.2f}%",
+        'community_group': f"{(response['community_group'] / total_responses) * 100:.2f}%",
+        'welfare_group': f"{(response['welfare_group'] / total_responses) * 100:.2f}%",
+        'religious_group': f"{(response['religious_group'] / total_responses) * 100:.2f}%",
+    } for response in responses}
+    
+    return Response(statistics)

@@ -50,7 +50,7 @@ class VolunteerDonationHabitsTests(TestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertTrue(isinstance(response.data, list), "Response data should be a list")
         
-        contains_female = any(entry['gender'] == 'Female' for entry in response.data)
+        contains_female = any(entry['Gender_Gender'] == 'Female' for entry in response.data)
         self.assertTrue(contains_female, "'Female' not found in the response data")
         
         print("Success: Validated volunteer habits response.")

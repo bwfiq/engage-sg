@@ -17,21 +17,21 @@ class SurveyResponseViewSet(viewsets.ModelViewSet):
 
 @api_view(['GET'])
 def social_involvement_statistics(request):
-    responses = SurveyResponse.objects.values('age_2', 'gender').annotate(
-        sports_group=Count('social_involve_1', filter=Q(social_involve_1='Yes')),
-        arts_group=Count('social_involve_2', filter=Q(social_involve_2='Yes')),
-        community_group=Count('social_involve_3', filter=Q(social_involve_3='Yes')),
-        welfare_group=Count('social_involve_4', filter=Q(social_involve_4='Yes')),
-        religious_group=Count('social_involve_5', filter=Q(social_involve_5='Yes'))
+    responses = SurveyResponse.objects.values('Age2_AgeGroups', 'Gender_Gender').annotate(
+        sports_group=Count('SocialInvolve_SportsGroupParticipation', filter=Q(SocialInvolve_SportsGroupParticipation='Yes')),
+        arts_group=Count('SocialInvolve_ArtsCulturalGroupParticipation', filter=Q(SocialInvolve_ArtsCulturalGroupParticipation='Yes')),
+        community_group=Count('SocialInvolve_CommunityGroupParticipation', filter=Q(SocialInvolve_CommunityGroupParticipation='Yes')),
+        welfare_group=Count('SocialInvolve_WelfareSelfHelpGroupParticipation', filter=Q(SocialInvolve_WelfareSelfHelpGroupParticipation='Yes')),
+        religious_group=Count('SocialInvolve_ReligiousGroupParticipation', filter=Q(SocialInvolve_ReligiousGroupParticipation='Yes'))
     )
 
     total_responses = SurveyResponse.objects.count()
     statistics = defaultdict(dict)
     
     for response in responses:
-        age_group = response['age_2']
-        gender = response['gender']
-        statistics[age_group][gender] = {
+        age_group = response['Age2_AgeGroups']
+        Gender_Gender = response['Gender_Gender']
+        statistics[age_group][Gender_Gender] = {
             'sports_group': f"{(response['sports_group'] / total_responses) * 100:.2f}%",
             'arts_group': f"{(response['arts_group'] / total_responses) * 100:.2f}%",
             'community_group': f"{(response['community_group'] / total_responses) * 100:.2f}%",
@@ -43,16 +43,16 @@ def social_involvement_statistics(request):
 
 @api_view(['GET'])
 def volunteer_habits(request):
-    responses = SurveyResponse.objects.values('volunteerdonate_freq', 'gender').annotate(
-        total_volunteers=Count('volunteerdonate_1', filter=Q(volunteerdonate_1='Yes')),
-        common_activity=Count('volunteerdonate_2', filter=Q(volunteerdonate_2='Yes')),
+    responses = SurveyResponse.objects.values('VolunteerDonateFreq_FrequencyOfVolunteering', 'Gender_Gender').annotate(
+        total_volunteers=Count('VolunteerDonate_VolunteeredTime', filter=Q(VolunteerDonate_VolunteeredTime='Yes')),
+        common_activity=Count('VolunteerDonate_DonatedMoney', filter=Q(VolunteerDonate_DonatedMoney='Yes')),
     )
 
     stats = []
     for response in responses:
         stats.append({
-            'volunteerdonate_freq': response['volunteerdonate_freq'],
-            'gender': response['gender'],
+            'VolunteerDonateFreq_FrequencyOfVolunteering': response['VolunteerDonateFreq_FrequencyOfVolunteering'],
+            'Gender_Gender': response['Gender_Gender'],
             'total_volunteers': response.get('total_volunteers', 0),
             'common_activity': response.get('common_activity', 0),
         })

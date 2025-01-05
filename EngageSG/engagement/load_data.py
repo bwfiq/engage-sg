@@ -20,156 +20,156 @@ def load_data_from_csv():
         for row in csv_reader:
             # Create a new SurveyResponse object from row data
             survey_response = SurveyResponse(
-                uid=row['uid'],  # Unique respondent ID
-                sample=row['sample'],  # Sample type
-                gender=row['gender'],  # Gender
-                age_2=row['age_2'],  # Age groups
-                dwelling=row['dwelling'],  # Dwelling type
-                industry=row['industry'],  # Current industry
+                UID_UniqueRespondentID=row['UID_UniqueRespondentID'],  # Unique respondent ID
+                Sample_SampleType=row['Sample_SampleType'],  # Sample type
+                Gender_Gender=row['Gender_Gender'],  # Gender
+                Age2_AgeGroups=row['Age2_AgeGroups'],  # Age groups
+                Dwelling_DwellingType=row['Dwelling_DwellingType'],  # Dwelling type
+                Industry_CurrentIndustry=row['Industry_CurrentIndustry'],  # Current Industry_CurrentIndustry
                 
                 # Social involvement fields
-                social_involve_1=row['social_involve_1'],  # Sports related groups
-                social_involve_2=row['social_involve_2'],  # Arts and Cultural groups
-                social_involve_3=row['social_involve_3'],  # Community groups
-                social_involve_4=row['social_involve_4'],  # Welfare & Self-Help groups
-                social_involve_5=row['social_involve_5'],  # Religious groups
-                social_involve_6=row['social_involve_6'],  # Interest & Hobby groups
-                social_involve_7=row['social_involve_7'],  # Discussion groups
-                social_involve_8=row['social_involve_8'],  # Other
-                social_involve_9=row['social_involve_9'],  # None of the above
+                SocialInvolve_SportsGroupParticipation=row['SocialInvolve_SportsGroupParticipation'],  # Sports related groups
+                SocialInvolve_ArtsCulturalGroupParticipation=row['SocialInvolve_ArtsCulturalGroupParticipation'],  # Arts and Cultural groups
+                SocialInvolve_CommunityGroupParticipation=row['SocialInvolve_CommunityGroupParticipation'],  # Community groups
+                SocialInvolve_WelfareSelfHelpGroupParticipation=row['SocialInvolve_WelfareSelfHelpGroupParticipation'],  # Welfare & Self-Help groups
+                SocialInvolve_ReligiousGroupParticipation=row['SocialInvolve_ReligiousGroupParticipation'],  # Religious groups
+                SocialInvolve_InterestHobbyGroupParticipation=row['SocialInvolve_InterestHobbyGroupParticipation'],  # Interest & Hobby groups
+                SocialInvolve_DiscussionGroupParticipation=row['SocialInvolve_DiscussionGroupParticipation'],  # Discussion groups
+                SocialInvolve_OtherParticipation=row['SocialInvolve_OtherParticipation'],  # Other
+                SocialInvolve_NoneParticipation=row['SocialInvolve_NoneParticipation'],  # None of the above
 
                 # Volunteer and donation fields
-                volunteerdonate_1=row['volunteerdonate_1'],  # Volunteered time
-                volunteerdonate_2=row['volunteerdonate_2'],  # Donated money
-                volunteerdonate_3=row['volunteerdonate_3'],  # Donated goods/services
-                volunteerdonate_4=row['volunteerdonate_4'],  # Volunteered time for projects
-                volunteerdonate_5=row['volunteerdonate_5'],  # Donated blood
-                volunteerdonate_6=row['volunteerdonate_6'],  # Worked with fellow citizens
-                volunteerdonate_7=row['volunteerdonate_7'],  # Helped a neighbor
-                volunteerdonate_8=row['volunteerdonate_8'],  # Other
-                volunteerdonate_9=row['volunteerdonate_9'],  # None of the above
-                volunteerdonate_freq=row['volunteerdonate_freq'],  # Frequency of volunteering/donating
-                volunteerdonate_metd=row['volunteerdonate_metd'],  # Method of volunteering/donating
+                VolunteerDonate_VolunteeredTime=row['VolunteerDonate_VolunteeredTime'],  # Volunteered time
+                VolunteerDonate_DonatedMoney=row['VolunteerDonate_DonatedMoney'],  # Donated money
+                VolunteerDonate_DonatedGoodsServices=row['VolunteerDonate_DonatedGoodsServices'],  # Donated goods/services
+                VolunteerDonate_VolunteeredForCommunityProjects=row['VolunteerDonate_VolunteeredForCommunityProjects'],  # Volunteered time for projects
+                VolunteerDonate_DonatedBlood=row['VolunteerDonate_DonatedBlood'],  # Donated blood
+                VolunteerDonate_ResolvedCommunityIssues=row['VolunteerDonate_ResolvedCommunityIssues'],  # Worked with fellow citizens
+                VolunteerDonate_HelpedNeighbors=row['VolunteerDonate_HelpedNeighbors'],  # Helped a neighbor
+                VolunteerDonate_OtherActivities=row['VolunteerDonate_OtherActivities'],  # Other
+                VolunteerDonate_NoneActivities=row['VolunteerDonate_NoneActivities'],  # None of the above
+                VolunteerDonateFreq_FrequencyOfVolunteering=row['VolunteerDonateFreq_FrequencyOfVolunteering'],  # Frequency of volunteering/donating
+                VolunteerDonateMetd_MethodOfVolunteering=row['VolunteerDonateMetd_MethodOfVolunteering'],  # Method of volunteering/donating
 
                 # Social networks fields
-                snetwork_ethnicity=row['snetwork_ethnicity'],  # Close friends of different ethnicity
-                snetwork_nationality=row['snetwork_nationality'],  # Close friends of different nationality
-                snetwork_religion=row['snetwork_religion'],  # Close friends of different religion
-                snetwork_income=row['snetwork_income'],  # Close friends of different income
-                snetwork_education=row['snetwork_education'],  # Close friends of different education
-                snetwork_sorientation=row['snetwork_sorientation'],  # Close friends of different sexual orientation
-                close_sg_friends=row['close_sg_friends'],  # Have close Singaporean friends
+                SnetworkEthnicity_FriendsOfDifferentEthnicity=row['SnetworkEthnicity_FriendsOfDifferentEthnicity'],  # Close friends of different ethnicity
+                SnetworkNationality_FriendsOfDifferentNationality=row['SnetworkNationality_FriendsOfDifferentNationality'],  # Close friends of different nationality
+                SnetworkReligion_FriendsOfDifferentReligion=row['SnetworkReligion_FriendsOfDifferentReligion'],  # Close friends of different religion
+                SnetworkIncome_FriendsOfDifferentIncome=row['SnetworkIncome_FriendsOfDifferentIncome'],  # Close friends of different income
+                SnetworkEducation_FriendsOfDifferentEducation=row['SnetworkEducation_FriendsOfDifferentEducation'],  # Close friends of different education
+                SnetworkSorientation_FriendsOfDifferentOrientation=row['SnetworkSorientation_FriendsOfDifferentOrientation'],  # Close friends of different sexual orientation
+                CloseSGFriends_HaveCloseSGanFriends=row['CloseSGFriends_HaveCloseSGanFriends'],  # Have close Singaporean friends
 
                 # Social interaction fields
-                sinteract_meal=row['sinteract_meal'],  # Shared a meal with a friend of different ethnicity/nationality
-                sinteract_invitedfriend=row['sinteract_invitedfriend'],  # Invited a friend to a celebration
-                sinteract_beeninvited=row['sinteract_beeninvited'],  # Been invited by a friend
-                sinteract_participated=row['sinteract_participated'],  # Participated in a celebration
+                SinteractMeal_SharedAMealWithFriend=row['SinteractMeal_SharedAMealWithFriend'],  # Shared a meal with a friend of different ethnicity/nationality
+                SinteractInvitedFriend_InvitedFriendToCelebration=row['SinteractInvitedFriend_InvitedFriendToCelebration'],  # Invited a friend to a celebration
+                SinteractBeenInvited_BeenInvitedToCelebration=row['SinteractBeenInvited_BeenInvitedToCelebration'],  # Been invited by a friend
+                SinteractParticipated_ParticipatedInFestival=row['SinteractParticipated_ParticipatedInFestival'],  # Participated in a celebration
 
                 # Support fields
-                support_immedfam=row['support_immedfam'],  # Support from immediate family
-                support_extfam=row['support_extfam'],  # Support from extended family
-                support_worksch=row['support_worksch'],  # Support from workplace/school
-                support_friends=row['support_friends'],  # Support from friends
+                SupportImmedfam_SupportFromImmediateFamily=row['SupportImmedfam_SupportFromImmediateFamily'],  # Support from immediate family
+                SupportExtfam_SupportFromExtendedFamily=row['SupportExtfam_SupportFromExtendedFamily'],  # Support from extended family
+                SupportWorksch_SupportFromWorkplaceSchool=row['SupportWorksch_SupportFromWorkplaceSchool'],  # Support from workplace/school
+                SupportFriends_SupportFromFriends=row['SupportFriends_SupportFromFriends'],  # Support from friends
 
                 # Overseas experience fields
-                os_exp_1=row['os_exp_1'],  # Studied overseas
-                os_exp_2=row['os_exp_2'],  # Worked overseas
-                os_exp_3=row['os_exp_3'],  # Stayed overseas for non-work reasons
-                os_exp_4=row['os_exp_4'],  # None of the above
-                time_os=row['time_os'],  # Time spent living overseas
-                study_os=row['study_os'],  # Plans to study overseas
-                work_os=row['work_os'],  # Plans to work overseas
-                travel_os=row['travel_os'],  # Plans to travel overseas
-                migrate_os=row['migrate_os'],  # Plans to migrate overseas
-                retire_os=row['retire_os'],  # Plans to retire overseas
+                OsExp_StudiedOverseas=row['OsExp_StudiedOverseas'],  # Studied overseas
+                OsExp_WorkedOverseas=row['OsExp_WorkedOverseas'],  # Worked overseas
+                OsExp_ExtendedStayOverseas=row['OsExp_ExtendedStayOverseas'],  # Stayed overseas for non-work reasons
+                OsExp_None=row['OsExp_None'],  # None of the above
+                TimeOs_TimeSpentLivingOverseas=row['TimeOs_TimeSpentLivingOverseas'],  # Time spent living overseas
+                StudyOs_PlansToStudyOverseas=row['StudyOs_PlansToStudyOverseas'],  # Plans to study overseas
+                WorkOs_PlansToWorkOverseas=row['WorkOs_PlansToWorkOverseas'],  # Plans to work overseas
+                TravelOs_PlansToTravelOverseas=row['TravelOs_PlansToTravelOverseas'],  # Plans to travel overseas
+                MigrateOs_PlansToMigrateOverseas=row['MigrateOs_PlansToMigrateOverseas'],  # Plans to migrate overseas
+                RetireOs_PlansToRetireOverseas=row['RetireOs_PlansToRetireOverseas'],  # Plans to retire overseas
 
                 # Outcome connection fields
-                outcome_connection=row['outcome_connection'],  # Strength of connection to Singapore
-                outcome_future=row['outcome_future'],  # Desire to shape Singapore’s future
+                OutcomeConnection_StrengthOfConnectionToSG=row['OutcomeConnection_StrengthOfConnectionToSG'],  # Strength of connection to Singapore
+                OutcomeFuture_StrengthOfDesireToShapeSGFuture=row['OutcomeFuture_StrengthOfDesireToShapeSGFuture'],  # Desire to shape Singapore’s future
 
                 # Behavioral characteristics fields
-                pillarbeh_1=row['pillarbeh_1'],  # Considerate behavior in public settings
-                pillarbeh_2=row['pillarbeh_2'],  # Helping close friends and family
-                pillarbeh_3=row['pillarbeh_3'],  # Helping wider networks
-                pillarbeh_4=row['pillarbeh_4'],  # Regularly donating to causes
-                pillarbeh_5=row['pillarbeh_5'],  # Regularly volunteering for causes
-                pillarbeh_6=row['pillarbeh_6'],  # Offering help without being asked
-                pillarbeh_7=row['pillarbeh_7'],  # Giving constructive feedback
-                pillarbeh_8=row['pillarbeh_8'],  # Leading or mobilizing for causes
-                pillarbeh_9=row['pillarbeh_9'],  # Participating in community initiatives
-                pillarbeh_10=row['pillarbeh_10'],  # Getting along with diverse cultures
-                pillarbeh_11=row['pillarbeh_11'],  # Avoiding racially-sensitive situations
-                pillarbeh_12=row['pillarbeh_12'],  # Easing racially-sensitive situations
-                pillarbeh_13=row['pillarbeh_13'],  # Including people from different cultures
-                pillarbeh_14=row['pillarbeh_14'],  # Understanding different cultures
-                pillarbeh_15=row['pillarbeh_15'],  # Good friends from different cultures
+                Pillarbeh1_ConsiderateBehaviorInPublic=row['Pillarbeh1_ConsiderateBehaviorInPublic'],  # Considerate behavior in public settings
+                Pillarbeh2_HelpingCloseFriendsFamily=row['Pillarbeh2_HelpingCloseFriendsFamily'],  # Helping close friends and family
+                Pillarbeh3_HelpingWiderNetwork=row['Pillarbeh3_HelpingWiderNetwork'],  # Helping wider networks
+                Pillarbeh4_RegularlyDonating=row['Pillarbeh4_RegularlyDonating'],  # Regularly donating to causes
+                Pillarbeh5_RegularlyVolunteering=row['Pillarbeh5_RegularlyVolunteering'],  # Regularly volunteering for causes
+                Pillarbeh6_OfferingHelpUnasked=row['Pillarbeh6_OfferingHelpUnasked'],  # Offering help without being asked
+                Pillarbeh7_ConstructiveFeedbackOnPolicies=row['Pillarbeh7_ConstructiveFeedbackOnPolicies'],  # Giving constructive feedback
+                Pillarbeh8_LeadMobilityForCauses=row['Pillarbeh8_LeadMobilityForCauses'],  # Leading or mobilizing for causes
+                Pillarbeh9_ParticipatingInCommunityInitiatives=row['Pillarbeh9_ParticipatingInCommunityInitiatives'],  # Participating in community initiatives
+                Pillarbeh10_GettingAlongWithDiverseCultures=row['Pillarbeh10_GettingAlongWithDiverseCultures'],  # Getting along with diverse cultures
+                Pillarbeh11_AvoidingRaciallySensitiveConversations=row['Pillarbeh11_AvoidingRaciallySensitiveConversations'],  # Avoiding racially-sensitive situations
+                Pillarbeh12_EasingRaciallySensitiveSituations=row['Pillarbeh12_EasingRaciallySensitiveSituations'],  # Easing racially-sensitive situations
+                Pillarbeh13_IncludingDifferentCulturesInLife=row['Pillarbeh13_IncludingDifferentCulturesInLife'],  # Including people from different cultures
+                Pillarbeh14_UnderstandingCulturalPractices=row['Pillarbeh14_UnderstandingCulturalPractices'],  # Understanding different cultures
+                Pillarbeh15_HavingGoodFriendsFromDifferentCultures=row['Pillarbeh15_HavingGoodFriendsFromDifferentCultures'],  # Good friends from different cultures
 
                 # Value-based characteristics fields
-                pillarvals_1=row['pillarvals_1'],  # Acting in line with societal values
-                pillarvals_2=row['pillarvals_2'],  # Desire to do the right thing
-                pillarvals_3=row['pillarvals_3'],  # Consistency with societal actions
-                pillarvals_4=row['pillarvals_4'],  # Willingness to benefit others
-                pillarvals_5=row['pillarvals_5'],  # Responsibility to contribute to society
-                pillarvals_6=row['pillarvals_6'],  # Helping others for personal well-being
-                pillarvals_7=row['pillarvals_7'],  # Helping others even if it risks offense
-                pillarvals_8=row['pillarvals_8'],  # Knowing how to help people in need
-                pillarvals_9=row['pillarvals_9'],  # Desire to participate in decision-making
-                pillarvals_12=row['pillarvals_12'],  # Encouragement to play an active role
-                pillarvals_13=row['pillarvals_13'],  # Confidence in creating positive change
-                pillarvals_14=row['pillarvals_14'],  # Feeling of belonging in Singapore
-                pillarvals_21=row['pillarvals_21'],  # Commonalities with diverse cultures
-                pillarvals_22=row['pillarvals_22'],  # Benefits of interacting with diverse cultures
-                pillarvals_23=row['pillarvals_23'],  # Opportunities for meaningful interactions
-                pillarvals_24=row['pillarvals_24'],  # Respect for cultural differences
-                pillarvals_25=row['pillarvals_25'],  # Concerns about racial insensitivity
-                pillarvals_26=row['pillarvals_26'],  # Confidence in Singapore's future
-                pillarvals_29=row['pillarvals_29'],  # Willing to support Singapore
-                pillarvals_30=row['pillarvals_30'],  # Opportunities to achieve aspirations
-                pillarvals_31=row['pillarvals_31'],  # Commitment to staying in Singapore
+                Pillarvals1_ConsistentWithValuesOfSociety=row['Pillarvals1_ConsistentWithValuesOfSociety'],  # Acting in line with societal values
+                Pillarvals2_GuidedByDesireToDoRight=row['Pillarvals2_GuidedByDesireToDoRight'],  # Desire to do the right thing
+                Pillarvals3_ActionsConsistentWithOthers=row['Pillarvals3_ActionsConsistentWithOthers'],  # Consistency with societal actions
+                Pillarvals4_BeneficialActionsEvenIfCostly=row['Pillarvals4_BeneficialActionsEvenIfCostly'],  # Willingness to benefit others
+                Pillarvals5_ResponsibilityToContributeToSociety=row['Pillarvals5_ResponsibilityToContributeToSociety'],  # Responsibility to contribute to society
+                Pillarvals6_HelpingOthersIncreasesWellBeing=row['Pillarvals6_HelpingOthersIncreasesWellBeing'],  # Helping others for personal well-being
+                Pillarvals7_HelpingRiskingOffense=row['Pillarvals7_HelpingRiskingOffense'],  # Helping others even if it risks offense
+                Pillarvals8_KnowingHowToHelpPeopleInNeed=row['Pillarvals8_KnowingHowToHelpPeopleInNeed'],  # Knowing how to help people in need
+                Pillarvals9_HavingASayInDecisions=row['Pillarvals9_HavingASayInDecisions'],  # Desire to participate in decision-making
+                Pillarvals12_ActiveRoleInSociety=row['Pillarvals12_ActiveRoleInSociety'],  # Encouragement to play an active role
+                Pillarvals13_PotentialForPositiveChange=row['Pillarvals13_PotentialForPositiveChange'],  # Confidence in creating positive change
+                Pillarvals14_BelongingAndAcceptanceInSG=row['Pillarvals14_BelongingAndAcceptanceInSG'],  # Feeling of belonging in Singapore
+                Pillarvals21_CommonGroundWithDifferentCultures=row['Pillarvals21_CommonGroundWithDifferentCultures'],  # Commonalities with diverse cultures
+                Pillarvals22_InteractingWithDifferentCulturesBenefitsMe=row['Pillarvals22_InteractingWithDifferentCulturesBenefitsMe'],  # Benefits of interacting with diverse cultures
+                Pillarvals23_MeaningfulInteractionsWithCultures=row['Pillarvals23_MeaningfulInteractionsWithCultures'],  # Opportunities for meaningful interactions
+                Pillarvals24_MeaningfulInteractionsWithNationalities=row['Pillarvals24_MeaningfulInteractionsWithNationalities'],  # Respect for cultural differences
+                Pillarvals25_RespectingCulturalDifferences=row['Pillarvals25_RespectingCulturalDifferences'],  # Concerns about racial insensitivity
+                Pillarvals26_NoRaciallyInsensitiveRemarks=row['Pillarvals26_NoRaciallyInsensitiveRemarks'],  # Confidence in Singapore's future
+                Pillarvals29_ConfidenceInSingaporeFuture=row['Pillarvals29_ConfidenceInSingaporeFuture'],  # Willing to support Singapore
+                Pillarvals30_SupportInGoodAndBadTimes=row['Pillarvals30_SupportInGoodAndBadTimes'],  # Opportunities to achieve aspirations
+                Pillarvals31_OpportunitiesForPersonalAspirations=row['Pillarvals31_OpportunitiesForPersonalAspirations'],  # Commitment to staying in Singapore
 
                 # Online behavior fields
-                online_news=row['online_news'],  # Check news/current affairs
-                online_sm=row['online_sm'],  # Use social media platforms
-                online_shop=row['online_shop'],  # Shopping behavior
-                online_areasinterest=row['online_areasinterest'],  # Searching for information of interest
-                online_games=row['online_games'],  # Online gaming behavior
-                online_update=row['online_update'],  # Updating self-information online
-                online_sharemedia=row['online_sharemedia'],  # Sharing media online
-                online_watchmedia=row['online_watchmedia'],  # Watching videos/movies online
+                OnlineNews_CheckNewsStayUpdated=row['OnlineNews_CheckNewsStayUpdated'],  # Check news/current affairs
+                OnlineSM_CheckSocialMedia=row['OnlineSM_CheckSocialMedia'],  # Use social media platforms
+                OnlineShop_ShoppingOnline=row['OnlineShop_ShoppingOnline'],  # Shopping behavior
+                OnlineAreasInterest_InformationOnAreasOfInterest=row['OnlineAreasInterest_InformationOnAreasOfInterest'],  # Searching for information of interest
+                OnlineGames_PlayingOnlineGames=row['OnlineGames_PlayingOnlineGames'],  # Online gaming behavior
+                OnlineUpdate_UpdateSelfInformation=row['OnlineUpdate_UpdateSelfInformation'],  # Updating self-information online
+                OnlineSharemedia_ShareVideosPhotos=row['OnlineSharemedia_ShareVideosPhotos'],  # Sharing media online
+                OnlineWatchmedia_WatchVideosMovies=row['OnlineWatchmedia_WatchVideosMovies'],  # Watching videos/movies online
 
                 # Household demographics fields
-                marital_stats=row['marital_stats'],  # Current marital status
-                children=row['children'],  # Have children
-                age_youngestchild=row['age_youngestchild'],  # Age of youngest child
-                hh_grandparents=row['hh_grandparents'],  # Live with grandparents
-                hh_parents=row['hh_parents'],  # Live with parents
-                hh_siblings=row['hh_siblings'],  # Live with siblings
-                hh_spouse=row['hh_spouse'],  # Live with spouse
-                hh_children=row['hh_children'],  # Live with children
-                hh_relatives=row['hh_relatives'],  # Live with other relatives
-                hh_helper=row['hh_helper'],  # Live with domestic helper
-                hh_mates=row['hh_mates'],  # Live with friends/housemates
-                hh_employer_their_family=row['hh_employer_their_family'],  # Live with employer's family
-                hh_grandchildren=row['hh_grandchildren'],  # Live with grandchildren
-                hh_other=row['hh_other'],  # Live with other arrangements
-                hh_none=row['hh_none'],  # Stay alone
+                MaritalStats_CurrentMaritalStatus=row['MaritalStats_CurrentMaritalStatus'],  # Current marital status
+                Children_HaveChildren=row['Children_HaveChildren'],  # Have Children_HaveChildren
+                AgeYoungestChild_AgeOfYoungestChild=row['AgeYoungestChild_AgeOfYoungestChild'],  # Age of youngest child
+                HHGrandparents_LiveWithGrandparents=row['HHGrandparents_LiveWithGrandparents'],  # Live with grandparents
+                HHParents_LiveWithParents=row['HHParents_LiveWithParents'],  # Live with parents
+                HHSiblings_LiveWithSiblings=row['HHSiblings_LiveWithSiblings'],  # Live with siblings
+                HHSpouse_LiveWithSpouse=row['HHSpouse_LiveWithSpouse'],  # Live with spouse
+                HHChildren_LiveWithChildren=row['HHChildren_LiveWithChildren'],  # Live with Children_HaveChildren
+                HHRelatives_LiveWithOtherRelatives=row['HHRelatives_LiveWithOtherRelatives'],  # Live with other relatives
+                HHHelper_LiveWithDomesticHelper=row['HHHelper_LiveWithDomesticHelper'],  # Live with domestic helper
+                HHMates_LiveWithFriendsHousemates=row['HHMates_LiveWithFriendsHousemates'],  # Live with friends/housemates
+                HHMates_LiveWithEmployerFamily=row['HHMates_LiveWithEmployerFamily'],  # Live with employer's family
+                HHMates_LiveWithGrandChildren=row['HHMates_LiveWithGrandChildren'],  # Live with grandChildren_HaveChildren
+                HHMates_LiveWithOther=row['HHMates_LiveWithOther'],  # Live with other arrangements
+                HHMates_NoneOfTheAboveStayAlone=row['HHMates_NoneOfTheAboveStayAlone'],  # Stay alone
 
-                # Education and occupation fields
-                highest_ed=row['highest_ed'],  # Highest attained education level
-                institution_deg=row['institution_deg'],  # Conferring institution for degree/post-grad
-                occupation=row['occupation'],  # Current occupation
+                # Education and Occupation_CurrentOccupation fields
+                HighestEd_HighestEducationLevel=row['HighestEd_HighestEducationLevel'],  # Highest attained education level
+                InstitutionDeg_ConferringInstitutionForDegree=row['InstitutionDeg_ConferringInstitutionForDegree'],  # Conferring institution for degree/post-grad
+                Occupation_CurrentOccupation=row['Occupation_CurrentOccupation'],  # Current Occupation_CurrentOccupation
                 
                 # Economic fields
-                mhi=row['mhi'],  # Monthly household income
-                mpi=row['mpi'],  # Monthly personal income
-                weight=row['weight'],  # Weight
+                MHI_MonthlyHouseholdIncome=row['MHI_MonthlyHouseholdIncome'],  # Monthly household income
+                MPI_MonthlyPersonalIncome=row['MPI_MonthlyPersonalIncome'],  # Monthly personal income
+                Weight_Weight=row['Weight_Weight'],  # Weight
             )
             try:
                 survey_response.save()
-                #print(f"Inserted response for uid: {survey_response.uid}")
+                #print(f"Inserted response for UID_UniqueRespondentID: {survey_response.UID_UniqueRespondentID}")
             except Exception as e:
-                print(f"Error inserting response for uid {row['uid']}: {str(e)}")
+                print(f"Error inserting response for UID_UniqueRespondentID {row['UID_UniqueRespondentID']}: {str(e)}")
 
 if __name__ == '__main__':
     load_data_from_csv()

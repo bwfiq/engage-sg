@@ -40,3 +40,21 @@ def social_involvement_statistics(request):
         }
 
     return Response(statistics)
+
+@api_view(['GET'])
+def volunteer_habits(request):
+    responses = SurveyResponse.objects.values('volunteerdonate_freq', 'gender').annotate(
+        total_volunteers=Count('volunteerdonate_1', filter=Q(volunteerdonate_1='Yes')),
+        common_activity=Count('volunteerdonate_2', filter=Q(volunteerdonate_2='Yes')),
+    )
+
+    stats = []
+    for response in responses:
+        stats.append({
+            'volunteerdonate_freq': response['volunteerdonate_freq'],
+            'gender': response['gender'],
+            'total_volunteers': response.get('total_volunteers', 0),
+            'common_activity': response.get('common_activity', 0),
+        })
+
+    return Response(stats)

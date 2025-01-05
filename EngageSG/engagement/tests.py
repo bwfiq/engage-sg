@@ -22,7 +22,7 @@ class LoadDataTests(TestCase):
 class SocialInvolvementStatisticsTests(TestCase):
     def setUp(self):
         SurveyResponse.objects.all().delete()
-        load_data_from_csv()  # Ensure data is loaded for tests
+        load_data_from_csv()
 
     def test_social_involvement_statistics(self):
         print("\nTesting functionality: Social Involvement Statistics at endpoint: /api/social-involvement/")
@@ -37,3 +37,20 @@ class SocialInvolvementStatisticsTests(TestCase):
         
         print("Success: All expected age groups were found in the response data.")
         
+class VolunteerDonationHabitsTests(TestCase):
+    def setUp(self):
+        SurveyResponse.objects.all().delete()
+        load_data_from_csv()
+
+    def test_volunteer_habits(self):
+        print("\nTesting functionality: Volunteer Habits at endpoint: /api/volunteer-habits/")
+        url = reverse('volunteer-habits')
+        response = self.client.get(url)
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertTrue(isinstance(response.data, list), "Response data should be a list")
+        
+        contains_female = any(entry['gender'] == 'Female' for entry in response.data)
+        self.assertTrue(contains_female, "'Female' not found in the response data")
+        
+        print("Success: Validated volunteer habits response.")

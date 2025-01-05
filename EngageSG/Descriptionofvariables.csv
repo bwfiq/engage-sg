@@ -1,0 +1,121 @@
+var_name,var_label
+uid,UID. Unique respondent ID
+sample,Sample. Sample type
+gender,Gender. Gender
+age_2,Age_2. Age groups
+dwelling,Dwelling. Dwelling type
+industry,Industry. Current industry
+social_involve_1,"Social_involve. Participation in any social groups - Sports related groups (e.g. soccer, running, badminton etc)"
+social_involve_2,"Social_involve. Participation in any social groups - Arts and Cultural groups (e.g. dance groups, book club, band etc)"
+social_involve_3,Social_involve. Participation in any social groups - Community groups (e.g. resident community etc)
+social_involve_4,Social_involve. Participation in any social groups - Welfare & Self-Help groups (e.g. non-profit organisations)
+social_involve_5,Social_involve. Participation in any social groups - Religious groups
+social_involve_6,Social_involve. Participation in any social groups - Interest & Hobby groups
+social_involve_7,Social_involve. Participation in any social groups - Discussion groups & forums for current affairs / politics
+social_involve_8,Social_involve. Participation in any social groups - Other
+social_involve_9,Social_involve. Participation in any social groups - None of the above
+volunteerdonate_1,VolunteerDonate. Participation in any volunteering/donating - Volunteered time at community centers / resident communities / places of worship / other charitable organisations
+volunteerdonate_2,VolunteerDonate. Participation in any volunteering/donating - Donated money to charitable causes
+volunteerdonate_3,"VolunteerDonate. Participation in any volunteering/donating - Donated goods / services to charitable causes (e.g. food, toy)"
+volunteerdonate_4,"VolunteerDonate. Participation in any volunteering/donating - Volunteered time for community projects initiated by friends, family, neighbours"
+volunteerdonate_5,VolunteerDonate. Participation in any volunteering/donating - Donated blood
+volunteerdonate_6,VolunteerDonate. Participation in any volunteering/donating - Worked with fellow citizens to resolve issues / initiate activities in your community
+volunteerdonate_7,VolunteerDonate. Participation in any volunteering/donating - Helped a neighbor or others in my community who were in need
+volunteerdonate_8,VolunteerDonate. Participation in any volunteering/donating - Other
+volunteerdonate_9,VolunteerDonate. Participation in any volunteering/donating - None of the above
+volunteerdonate_freq,VolunteerDonate_freq. Frequency of volunteering/donating
+volunteerdonate_metd,VolunteerDonate_metd. Method of volunteering/donating
+snetwork_ethnicity,Snetwork_Ethnicity. Have close friends of different ethnicity
+snetwork_nationality,Snetwork_Nationality. Have close friends of different nationality
+snetwork_religion,Snetwork_Religion. Have close friends of different religion
+snetwork_income,Snetwork_Income. Have close friends of different income
+snetwork_education,Snetwork_Education. Have close friends of different education
+snetwork_sorientation,Snetwork_Sorientation. Have close friends of different sexual orientation
+close_sg_friends,Close_SG_friends. Have close SGan friends
+sinteract_meal,Sinteract_meal. Have shared a meal with a friend of different ethnicity/nationality
+sinteract_invitedfriend,Sinteract_invitedfriend. Invited a friend of different ethnicity/nationality to a celebration
+sinteract_beeninvited,Sinteract_beeninvited. Been invited to a celebration by a friend of different ethnicity/nationality
+sinteract_participated,Sinteract_participated. Participated in festive celebration of different ethnicity/nationality/culture
+support_immedfam,Support_immedfam. Perceived support received from immediate family
+support_extfam,Support_extfam. Perceived support received from extended family
+support_worksch,Support_worksch. Perceived support received from workplace/school
+support_friends,Support_friends. Perceived support received from friends
+os_exp_1,Os_exp. Overseas experience - Studied overseas
+os_exp_2,Os_exp. Overseas experience - Worked overseas
+os_exp_3,Os_exp. Overseas experience - Stayed overseas for an extended period for reasons other than work or studies
+os_exp_4,Os_exp. Overseas experience - None of the above
+time_os,Time_Os. Time spent living overseas
+study_os,Study_Os. Have plans to study overseas
+work_os,Work_Os. Have plans to work overseas
+travel_os,Travel_Os. Have plans to travel overseas for an extended period for other reasons
+migrate_os,Migrate_Os. Have plans to migrate overseas
+retire_os,Retire_Os. Have plans to retire overseas
+outcome_connection,Outcome_Connection. Strength of connection to SG
+outcome_future,Outcome_Future. Strength of desire to be a part of shaping SG's future
+pillarbeh_1,Pillarbeh_1. I usually behave in a considerate manner in public settings
+pillarbeh_2,Pillarbeh_2. I regularly help / look out for my close friends and family
+pillarbeh_3,"Pillarbeh_3. I regularly help / look out for my wider network (e.g. colleagues, neighbours, etc.)"
+pillarbeh_4,"Pillarbeh_4. I regularly donate to causes or people in need (monetary, clothes, food, giving blood, etc.)"
+pillarbeh_5,Pillarbeh_5. I regularly volunteer for causes or people in need
+pillarbeh_6,Pillarbeh_6. I offer help to others without being asked
+pillarbeh_7,Pillarbeh_7. I make an effort to give constructive feedback on national policies and issues
+pillarbeh_8,Pillarbeh_8. I lead and/or mobilise others for causes and issues that matter to me
+pillarbeh_9,Pillarbeh_9. I regularly take part in community initiatives or grassroots activities
+pillarbeh_10,Pillarbeh_10. I make a conscious effort to get along with people from different cultures or nationalities
+pillarbeh_11,Pillarbeh_11. I make an effort not to start or add to racially-sensitive situations or conversations
+pillarbeh_12,Pillarbeh_12. I make an effort to ease racially-sensitive situations when they happen
+pillarbeh_13,Pillarbeh_13. I make an active effort to include people from different cultures or nationalities in my daily life
+pillarbeh_14,"Pillarbeh_14. I proactively make efforts to understand the practices of different cultures (e.g. learning more, attending festivities, etc.)"
+pillarbeh_15,Pillarbeh_15. I have good friends from different cultures or nationalities
+pillarvals_1,Pillarvals_1. It is important for me to act in a way that is consistent with the values of society
+pillarvals_2,Pillarvals_2. I am strongly guided by the desire to do the right thing
+pillarvals_3,Pillarvals_3. It is important to me that my actions are consistent with the actions of those around me
+pillarvals_4,"Pillarvals_4. I am willing to act in a way that benefits others even if it costs me (e.g. in time, money, effort)"
+pillarvals_5,Pillarvals_5. I believe it is my responsibility or duty to contribute to society
+pillarvals_6,Pillarvals_6. Offering help to others (including donating and volunteering) are things I do to increase my well-being
+pillarvals_7,Pillarvals_7. I offer to help others even if it risks offending someone
+pillarvals_8,"Pillarvals_8. I know how to help people in need (e.g. who needs help, what help is needed, and how to help, etc.)"
+pillarvals_9,Pillarvals_9. I want to have a say in the decisions and policies that affect my life
+pillarvals_12,"Pillarvals_12. In Singapore, citizens are often encouraged to play an active role in society and have the means to do so"
+pillarvals_13,Pillarvals_13. I feel I can create positive change in my life and in my community
+pillarvals_14,Pillarvals_14. I feel that I belong and am accepted in Singapore
+pillarvals_21,Pillarvals_21. I believe that I have things in common with people of different cultures and nationalities
+pillarvals_22,Pillarvals_22. I feel that being able to interact well with people of different cultures and nationalities is beneficial to me
+pillarvals_23,Pillarvals_23. There are enough opportunities for meaningful interactions with people of different cultures
+pillarvals_24,Pillarvals_24. There are enough opportunities for meaningful interactions with people of different nationalities
+pillarvals_25,"Pillarvals_25. People around me generally respect differences in culture, lifestyle and beliefs"
+pillarvals_26,Pillarvals_26. It is wrong to make racially or culturally insensitive remarks
+pillarvals_29,Pillarvals_29. I am confident that Singapore has a bright future ahead
+pillarvals_30,Pillarvals_30. I am willing to support Singapore in both good and bad times
+pillarvals_31,Pillarvals_31. There are enough opportunities in Singapore for me to achieve my personal aspirations in life
+pillarvals_32,Pillarvals_32. There are enough opportunities in Singapore for me to live by my values
+pillarvals_33,Pillarvals_33. I am committed to staying in Singapore in the long-run
+online_news,Online_news. Check news / stay updated on current affairs
+online_sm,Online_SM. Check Facebook / Twitter / Instagram etc.
+online_shop,Online_shop. Shop
+online_areasinterest,Online_areasinterest. Look for information on areas of interest
+online_games,Online_games. Play online games
+online_update,Online_update. Update information about self
+online_sharemedia,"Online_sharemedia. Share videos, photos"
+online_watchmedia,"Online_watchmedia. Watch videos, movies"
+marital_stats,Marital_stats. Current marital status
+children,Children. Have children
+age_youngestchild,Age_youngestchild. Age of youngest child
+hh_grandparents,HH_grandparents. Currently live with grandparents/(in-law)
+hh_parents,HH_parents. Currently live with parents/(in-law)
+hh_siblings,HH_siblings. Currently live with siblings/(in-law)
+hh_spouse,HH_spouse. Currently live with spouse
+hh_children,HH_children. Currently live with children
+hh_relatives,HH_relatives. Currently live with other relatives
+hh_helper,HH_helper. Currently live with domestic helper
+hh_mates,HH_mates. Currently live with friends / housemates / tenants / Landlord
+hh_employer_their_family,HH_mates. Currently live with Employer and their family
+hh_grandchildren,HH_mates. Currently live with Grand children
+hh_other,HH_mates. Currently live with Other
+hh_none,HH_mates. None of the above - I stay alone
+highest_ed,Highest_ed. Highest attained education level
+institution_deg,Institution_deg. Conferring institution for deg/post-grad deg
+occupation,Occupation. Current occupation
+mhi,MHI. Monthly household income
+mpi,MPI. Monthly personal income
+weight,Weight

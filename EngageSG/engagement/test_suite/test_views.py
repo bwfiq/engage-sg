@@ -5,8 +5,8 @@ from ..models import SurveyResponse
 
 class SurveyResponseTests(APITestCase):
     def setUp(self):
-        # Create a sample survey response for testing
-        self.response = SurveyResponse.objects.create(
+        SurveyResponse.objects.all().delete()
+        self.sample_response = SurveyResponse.objects.create(
             uid="123456",
             sample="Resident (Citizen/PR)",
             gender="Female",
@@ -127,10 +127,12 @@ class SurveyResponseTests(APITestCase):
             mhi="S4,001-S5,000",
             mpi="S2,001-S3,000",
             weight=70.5
-        )
-
+    )
+    
     def test_create_survey_response(self):
-        url = reverse('surveyresponse-list')  # URL for the survey response list endpoint
+        print("\nTesting functionality: Create Survey Response at endpoint: /api/surveyresponses/")
+
+        url = reverse('surveyresponse-list')
         data = {
             "uid": "123457",
             "sample": "Resident (Citizen/PR)",
@@ -254,14 +256,20 @@ class SurveyResponseTests(APITestCase):
             "weight": 75.0
         }
         response = self.client.post(url, data, format='json')
-    
-        # Print the response content to debug the error
+
+        # Print the response content for debugging
         #print("Response status:", response.status_code)
         #print("Response data:", response.data)
+        
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-
+        print("Success: Created a new survey response.")
+        
     def test_list_survey_responses(self):
+        print("\nTesting functionality: List Survey Responses at endpoint: /api/surveyresponses/")
         url = reverse('surveyresponse-list')
         response = self.client.get(url)
+        
+        print("Response status:", response.status_code)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(response.data), 1)  # Check that we have one response
+        self.assertEqual(len(response.data), 1)
+        print("Success: Fetched survey responses.")

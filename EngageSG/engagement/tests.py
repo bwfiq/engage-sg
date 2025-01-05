@@ -270,10 +270,14 @@ class SurveyResponseTests(APITestCase):
         print("\nTesting functionality: List Survey Responses at endpoint: /api/surveyresponses/")
         url = reverse('surveyresponse-list')
         response = self.client.get(url)
-        
+
         print("Response status:", response.status_code)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(response.data), 1)
+
+        expected_count = SurveyResponse.objects.count()
+        print(f"Expected entries: {expected_count}, Actual entries: {len(response.data['results'])}")
+
+        self.assertEqual(len(response.data['results']), expected_count)
         print("Success: Fetched survey responses.")
 
 class LoadDataTests(TestCase):

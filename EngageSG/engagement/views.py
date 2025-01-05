@@ -4,7 +4,7 @@ from .models import SurveyResponse
 from .serializers import SurveyResponseSerializer
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from django.db.models import Count, Q
+from django.db.models import Count, Q, Avg
 from collections import defaultdict
 from .base_views import BaseViewSet
 from .base_views import BaseViewSet
@@ -100,3 +100,26 @@ class SocialInvolvementByEducationView(BaseViewSet):
         } for response in responses}
 
         return Response(statistics)
+    
+class OutcomeConnectionsView(BaseViewSet):
+    queryset = SurveyResponse.objects.all()
+    serializer_class = SurveyResponseSerializer
+
+    @action(detail=False, methods=['get'])
+    def connections(self, request):
+        responses = (SurveyResponse.objects
+                     .values('Age2_AgeGroups', 'Gender_Gender')
+                     .annotate(
+                         average_score=Avg('OutcomeConnection_StrengthOfConnectionToSG')
+                     ))
+
+        connections = defaultdict(dict)
+
+        for response in responses:
+            age_group = response['Age2_AgeGroups']
+            gender = response['Gender_Gender']
+            connections[age_group][gender] = {
+                'average_score': f"{response['average_score']:.2f}"
+            }
+
+        return Response(connections)

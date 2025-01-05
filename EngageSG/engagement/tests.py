@@ -498,3 +498,22 @@ class SocialInvolvementByEducationTests(TestCase):
         self.assertGreater(len(response.data), 0, "The response data should contain statistics for at least one education level.")
 
         print("Success: Validated social involvement statistics by education response.")
+        
+class OutcomeConnectionsTests(APITestCase):
+    def setUp(self):
+        SurveyResponse.objects.all().delete()
+        load_data_from_csv()
+    
+    def test_outcome_connections(self):
+        print("\nTesting functionality: Analyze Outcome Connections at endpoint: /api/outcome-connections/")
+        url = reverse('outcome-connections')
+        response = self.client.get(url)
+        
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertTrue(isinstance(response.data, dict), "Response data should be a dictionary.")
+        
+        expected_age_groups = ['16-19 years old', '20-24 years old', '25-34 years old']
+        for age_group in expected_age_groups:
+            self.assertIn(age_group, response.data, f"{age_group} not found in response data.")
+        
+        print("Success: Validated outcome connection response.")

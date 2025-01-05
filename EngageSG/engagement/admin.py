@@ -1,3 +1,4 @@
 from django.contrib import admin
+from .models import SurveyResponse  # Import your model
 
-# Register your models here.
+admin.site.register(SurveyResponse)  # Register the model with the admin site

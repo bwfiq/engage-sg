@@ -1,6 +1,10 @@
-from django.urls import path
-from . import views
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from .views import SurveyResponseViewSet
+
+router = DefaultRouter()
+router.register(r'surveyresponses', SurveyResponseViewSet)
 
 urlpatterns = [
-    # Placeholder for future endpoints
+    path('', include(router.urls)),  # Includes all routes defined in the router
 ]

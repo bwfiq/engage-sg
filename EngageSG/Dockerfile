@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 8000
 
 # Command to run migrations, load data, and then run the server
-CMD ["bash", "-c", "python manage.py migrate && python engagement/load_data.py && python manage.py runserver 0.0.0.0:8000"]
+CMD ["bash", "-c", "python engagement/load_data.py && python manage.py makemigrations engagement && python manage.py migrate && python manage.py createsuperuser --noinput --username $DJANGO_SUPERUSER_USERNAME --email $DJANGO_SUPERUSER_EMAIL && python engagement/load_data.py && python manage.py runserver 0.0.0.0:8000"]
